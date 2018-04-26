@@ -1,0 +1,23 @@
+body {
+    background-image: url("../images/thanos.jpg"); 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    color:white;
+}
+
+title {
+    color:white;
+    font-size: 48px;
+    font-weight: bolder;
+}
+
+img {
+    width:60px;
+    height:60px;
+}
+
+p {
+    font-size: 18px;
+}
