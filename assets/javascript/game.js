@@ -62,6 +62,8 @@ $("img").click(function(){
 });
 });
 
+
+// updated portfolio: file:///Users/brandondullye/Desktop/class/hw/hw2/Bootstrap-Portfolio/portfolio.html
 // The player wins if their total score matches the random number from the beginning of the game.
 
 // The player loses if their score goes above the random number.
