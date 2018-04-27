@@ -6,8 +6,9 @@ var game = {
     userScore: 0,
 
     start: function(){
+        console.log(game);
         // sets target to a random number
-        game.target=Math.floor(Math.random() * 120) +1; //researech how to set minimum to be no less than 19
+        game.target = Math.floor(Math.random() * 101) + 19; //researech how to set minimum to be no less than 19
 
         game.userScore = 0;
         
@@ -19,29 +20,46 @@ var game = {
             $('img:eq('+ i + ')').attr('data-value', Math.floor(Math.random() * 12) +1);
         }
 
-        $("img").click(function(){
-            game.userScore += $(this).data('value');
-            $(".userScore").text(game.userScore);
+        // $("img").click(function(){
+        //     console.log("inclick function",game)
+        //     game.userScore += $(this).data('value');
+        //     $(".userScore").text(game.userScore);
 
-            if (game.userScore == game.target){
-                game.wins++;
-                alert('You win!!');
-                $(".userWins").text(game.wins);
-                game.start();
-            } else if (game.userScore > game.target){
-                game.losses++;
-                alert('Better luck next time.');
-                $(".userLosses").text(game.losses);
-                game.start();
-            }
-        });
+        //     if (game.userScore == game.target){
+        //         game.wins++;
+        //         alert('You win!!');
+        //         $(".userWins").text(game.wins);
+        //         game.start();
+        //     } else if (game.userScore > game.target){
+        //         game.losses++;
+        //         alert('Better luck next time.');
+        //         $(".userLosses").text(game.losses);
+        //         game.start();
+        //     }
+        // });
 
     },
 
 };
 
 game.start();
+$("img").click(function(){
+    console.log(this);
+    game.userScore += +$(this).attr('data-value');
+    $(".userScore").text(game.userScore);
 
+    if (game.userScore == game.target){
+        game.wins++;
+        alert('You win!!');
+        $(".userWins").text(game.wins);
+        game.start();
+    } else if (game.userScore > game.target){
+        game.losses++;
+        alert('Better luck next time.');
+        $(".userLosses").text(game.losses);
+        game.start();
+    }
+});
 });
 
 // The player wins if their total score matches the random number from the beginning of the game.
